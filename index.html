@@ -15,7 +15,31 @@
 </head>
 
 <body>
+  <header class="header">
+    <div class="container header__inner">
+      <h1 class="header__title">✏️ To do list</h1>
+      <form class="header__form todo-form" id="todo" action="" method="">
+        <input class="todo-form__input" name="text" type="text" placeholder="Enter the task">
+        <button class="todo-form__button"><svg class="todo-form__img" viewBox="0 0 16 17" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M8.66669 3.83335C8.66669 3.46516 8.36821 3.16669 8.00002 3.16669C7.63183 3.16669 7.33335 3.46516 7.33335 3.83335V7.83335H3.33335C2.96516 7.83335 2.66669 8.13183 2.66669 8.50002C2.66669 8.86821 2.96516 9.16669 3.33335 9.16669H7.33335V13.1667C7.33335 13.5349 7.63183 13.8334 8.00002 13.8334C8.36821 13.8334 8.66669 13.5349 8.66669 13.1667V9.16669H12.6667C13.0349 9.16669 13.3334 8.86821 13.3334 8.50002C13.3334 8.13183 13.0349 7.83335 12.6667 7.83335H8.66669V3.83335Z" />
+          </svg>Add New Task</button>
+      </form>
+    </div>
+  </header>
 
+  <main class="main">
+    <div class="container main__inner">
+      <h2 class="main__title">Tasks</h2>
+      <ul class="main__list list" id="todo-list">
+        <!-- <li class="list__item">safdbfgnhnfdrsefgsrhtfg</li>
+        <li class="list__item">safdbfgnhnfdrsefgsrhtfg</li> -->
+      </ul>
+    </div>
+  </main>
+
+  <script src="script/main.js"></script>
 </body>
 
 </html>

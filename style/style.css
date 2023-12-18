@@ -11,3 +11,122 @@ body {
 html {
   font-size: 10px;
 }
+
+.container {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+  max-width: 1286px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.header__inner {
+  padding-top: 3.6rem;
+  padding-bottom: 3.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__title {
+  color: #292d32;
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.header__form {
+  width: 100%;
+  max-width: 46.9rem;
+}
+
+.todo-form {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.todo-form__input {
+  width: 70%;
+  padding: 1.2rem;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 1px solid #c4c4c4;
+  background: #fff;
+}
+
+.todo-form__input::placeholder {
+  color: #c4c4c4;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.todo-form__button {
+  background-color: #ffffff00;
+  display: inline-flex;
+  padding: 3px 2px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 4px;
+  border: 2px solid #d7dcff00;
+  color: #c4c4c4;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.todo-form__img {
+  width: 16px;
+  height: 17px;
+  fill: #c4c4c4;
+}
+
+/* --------------------------------------------------- */
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding-top: 14.2rem;
+  background-color: #efefef;
+}
+
+.main__inner {
+  max-width: 79.9rem;
+  width: 100%;
+}
+
+.main__title {
+  color: #6a6e74;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 1.5rem;
+  padding-left: 2.4rem;
+}
+
+.main__list {
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.list__item {
+  text-decoration: none;
+  color: #292d32;
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-radius: 8px;
+  background: #fff;
+  padding: 1.4rem 1.2rem 1.5rem 2.4rem;
+}
