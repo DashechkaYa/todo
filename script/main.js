@@ -40,10 +40,10 @@ class TodoLList {
 class TodoListDom extends TodoLList {
   constructor() {
     super()
-    this.$form = document.getElementById('todo');            // тут препод додав 2 параметра в конструктор і записав їх в document.getElement... в дужках. Але ми ці змінні ніде не створили.. що це означає??
+    this.$form = document.getElementById('todo');
     this.$todoList = document.getElementById('todo-list');
-    this.$deleteButton = document.getElementById('delete-button'); // тут помилка - не знаходить ІД
-    this.$body = document.body;                                    // тут те саме
+    this.$deleteButton = this.$todoList.lastElementChild;
+    this.$popup = document.getElementById('popup');
 
     this.$form.addEventListener('submit', this.#onFormSubmit);
     this.$todoList.addEventListener('change', this.#onTodoItemToogle);
@@ -51,7 +51,7 @@ class TodoListDom extends TodoLList {
   }
 
   #getTodoItemTemplate(todoItem) {
-    return `<li class="list__item" data-id="${todoItem.id}">${todoItem.text}
+    return `<li class="list__item" data-id="${todoItem.id}"><span class="list__text">${todoItem.text}</span>
       <input class="list__checkbox-input" type="checkbox" ${todoItem.done ? 'checked' : ''} tabindex="0"><span class="list__checkbox-button"><svg class="list__checkbox-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0791 3.08754C12.307 3.31535 12.307 3.68469 12.0791 3.9125L5.66248 10.3292C5.43467 10.557 5.06533 10.557 4.83752 10.3292L1.92085 7.4125C1.69305 7.18469 1.69305 6.81535 1.92085 6.58754C2.14866 6.35974 2.51801 6.35974 2.74581 6.58754L5.25 9.09173L11.2542 3.08754C11.482 2.85974 11.8513 2.85974 12.0791 3.08754Z"/>
       </svg></span>
@@ -61,19 +61,6 @@ class TodoListDom extends TodoLList {
         </svg>
       </button>
     </li>`
-  }
-
-  #onPopupCreate() {
-    return `<div class=" popup popup__back">
-    <div class="popup__card">
-      <button class="popup__button-close"><img class="popup__img-close" src="img/Close.svg" alt=""></button>
-      <h3 class="popup__title">Do you really want to delete this task?</h3>
-      <div class="popup__buttons">
-        <button class="popup__button popup__button--white" type="button">No</button>
-        <button class="popup__button popup__button--blue" type="button">Yes</button>
-      </div>
-    </div>
-  </div> `
   }
 
   render() {
@@ -98,9 +85,9 @@ class TodoListDom extends TodoLList {
   }
 
   popupOpen = () => {
-    console.log('rehtfgbd');
-    this.$body.prepend(this.#onPopupCreate);
+    this.$popup.style.display = 'block';
   }
+
 }
 
 window.addEventListener('DOMContentLoaded', () => {
