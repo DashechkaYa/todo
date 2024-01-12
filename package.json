@@ -16,6 +16,7 @@
     "parcel": "^2.10.3"
   },
   "dependencies": {
-    "rimraf": "^5.0.5"
+    "rimraf": "^5.0.5",
+    "uuid": "^9.0.1"
   }
 }

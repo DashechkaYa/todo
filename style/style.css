@@ -64,6 +64,22 @@ html {
   font-weight: 400;
 }
 
+/* .todo-form__input:valid + .todo-form__button {
+  color: #3257fb;
+}
+
+.todo-form__input:valid + .todo-form__button > .todo-form__img {
+  fill: #3257fb;
+} */
+
+.todo-form__button.active {
+  color: #3257fb;
+}
+
+.active > .todo-form__img {
+  fill: #3257fb;
+}
+
 .todo-form__input:hover {
   border-color: #8a8e97;
 }
@@ -72,21 +88,9 @@ html {
   outline: 2px solid #d7dcff;
 }
 
-.todo-form__input:focus + .todo-form__button {
-  color: #3257fb;
-}
-
-.todo-form__input:focus + .todo-form__button > .todo-form__img {
-  fill: #3257fb;
-}
-
 .todo-form__input:active {
   outline: none;
   border-color: #3257fb;
-}
-
-.todo-form__input:active + .todo-form__button {
-  color: #3257fb;
 }
 
 .todo-form__input::placeholder {
@@ -165,6 +169,18 @@ html {
   background: #f2f3fd;
 }
 
+.list__item.new {
+  background-color: #ecfffa;
+}
+
+/* .list__item.active {
+  background-color: #d7dcff;
+} */
+
+.list__item.active .list__text {
+  text-decoration-line: line-through;
+}
+
 .list__text {
   display: block;
   max-width: 80%;
@@ -227,22 +243,26 @@ html {
   cursor: pointer;
 }
 
+.list__delete-button:hover .list__delete-icon {
+  fill: #3257fb;
+}
+
 .list__delete-icon {
   width: 24px;
   height: 24px;
   fill: #6a6e74;
+
+  /* на цьому ел тепер не спрацьовує подія слухач; і ховер теж тому вішаємо його через кнопку батьківську а не саму іконку  */
+  pointer-events: none;
 }
 
-.list__delete-icon:hover {
+/* .list__delete-icon:hover {
   fill: #3257fb;
-}
+} */
 
 .popup__back {
   position: fixed;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
   width: 100vw;
   left: 0;
@@ -253,6 +273,9 @@ html {
 
 .popup {
   display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .popup__card {
@@ -290,6 +313,7 @@ html {
   border: 1px solid #3257fb;
   font-size: 12px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .popup__button--white {
@@ -307,10 +331,12 @@ html {
   border: none;
   background-color: #ffffff00;
   padding: 0;
+  cursor: pointer;
 }
 
 .popup__img-close {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
+  pointer-events: none;
 }
