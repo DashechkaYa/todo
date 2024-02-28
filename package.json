@@ -4,15 +4,18 @@
   "description": "",
   "scripts": {
     "dev": "parcel index.html --open",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --public-url ./",
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
-    "predev": "npm run clean"
+    "predev": "npm run clean",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "parcel": "^2.10.3"
   },
   "dependencies": {

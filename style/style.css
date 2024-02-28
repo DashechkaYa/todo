@@ -183,7 +183,7 @@ html {
 
 .list__text {
   display: block;
-  max-width: 80%;
+  max-width: 85%;
   overflow: hidden;
 }
 
@@ -192,12 +192,14 @@ html {
   cursor: pointer;
   position: absolute;
   right: 65px;
+  top: 14px;
   width: 20px;
   height: 20px;
 }
 
 .list__checkbox-input {
   position: absolute;
+  top: 14px;
   width: 20px;
   height: 20px;
   z-index: -2;
